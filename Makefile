@@ -138,6 +138,8 @@ all: $(BUILD)
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	@mkdir -p $(CURDIR)/switch/SaltySD/plugins
+	@cp NX-FPS.elf $(CURDIR)/switch/SaltySD/plugins
 
 #---------------------------------------------------------------------------------
 clean:

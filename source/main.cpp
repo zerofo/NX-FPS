@@ -1,7 +1,7 @@
 #include <switch_min.h>
-#include "saltysd/SaltySD_ipc.h"
-#include "saltysd/SaltySD_dynamic.h"
-#include "saltysd/SaltySD_core.h"
+#include "saltysd/saltysd_ipc.h"
+#include "saltysd/saltysd_dynamic.h"
+#include "saltysd/saltysd_core.h"
 
 extern "C" {
 	extern u32 __start__;
@@ -167,7 +167,7 @@ uintptr_t nvnBootstrapLoader_1(const char* nvnName) {
 int main(int argc, char *argv[]) {
 	SaltySD_printf("NX-FPS: alive\n");
 	uint64_t addr_FPS = (uint64_t)&FPS;
-	FILE* offset = SaltySDCore_fopen("sdmc:/SaltySD/FPSoffset.hex", "wb");
+	FILE* offset = SaltySDCore_fopen("sdmc:/switch/SaltySD/FPSoffset.hex", "wb");
 	SaltySDCore_fwrite(&addr_FPS, 0x5, 1, offset);
 	SaltySDCore_fclose(offset);
 	addr_nvnGetProcAddress = (uint64_t)&nvnGetProcAddress;
