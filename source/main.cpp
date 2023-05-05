@@ -127,7 +127,7 @@ typedef int (*nvnGetPresentInterval_0)(void* nvnWindow);
 typedef void* (*nvnSyncWait_0)(void* _this, uint64_t timeout_ns);
 
 inline void createBuildidPath(uint64_t buildid, char* titleid, char* buffer) {
-	strcpy(buffer, "sdmc:/SaltySD/plugins/FPSLocker/patches/0");
+	strcpy(buffer, "sdmc:/switch/SaltySD/plugins/FPSLocker/patches/0");
 	strcat(buffer, &titleid[0]);
 	strcat(buffer, "/");
 	ltoa(buildid, &titleid[0], 16);
@@ -566,7 +566,7 @@ int main(int argc, char *argv[]) {
 			char titleid[17];
 			CheckTitleID(&titleid[0]);
 			char path[128];
-			strcpy(&path[0], "sdmc:/SaltySD/plugins/FPSLocker/0");
+			strcpy(&path[0], "sdmc:/switch/SaltySD/plugins/FPSLocker/0");
 			strcat(&path[0], &titleid[0]);
 			strcat(&path[0], ".dat");
 			FILE* file_dat = SaltySDCore_fopen(path, "rb");
